@@ -1,9 +1,12 @@
 package com.cvt.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class Customer {
@@ -17,6 +20,9 @@ public class Customer {
 	private String emailId;
 	private String userName;
 	private String password;
+	
+	@Transient
+	@JsonIgnore
 	private String confirmPassword;
 	
 	public Long getId() {
@@ -67,9 +73,5 @@ public class Customer {
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
 	}
-	
-	 public boolean isPasswordMatching() {
-	        return this.password.equals(this.confirmPassword); 
-	    }
 
 }

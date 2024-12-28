@@ -31,7 +31,5 @@ public class CustomerController {
 		Customer savedCustomer =  customerService.customerService(customerDto);
 		return ResponseEntity.ok(savedCustomer);
 	}
-	
-	
 
 }

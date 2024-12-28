@@ -74,5 +74,9 @@ public class CustomerDto {
 		this.confirmPassword = confirmPassword;
 	}
 	
+	 public boolean isPasswordMatching() {
+	        return this.password.equals(this.confirmPassword); 
+	    }
+	
 
 }
