@@ -14,8 +14,8 @@ public class SecurityConfig {
 	            .authorizeRequests()
 	            .anyRequest().permitAll()
 	            .and()
-	            .httpBasic().disable()  // Disable HTTP Basic Authentication
-	            .formLogin().disable()  // Disable form login if you don't want it
+	            .httpBasic().disable()
+	            .formLogin().disable()
 	            .csrf().disable();
 
 	        return http.build();
